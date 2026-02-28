@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="inputs">
+        <textarea id="dataprint" rows="2" readonly></textarea>
+        <div class="diff" id="crono">C</div>
+      </div>
+      <div class="block">
+        <div class="bears">
+          <div class="blocks">9</div>
+          <div class="blocks">6</div>
+          <div class="blocks">3</div>
+          <div class="blocks">/</div>
+        </div>
+        <div class="bears">
+          <div class="blocks">8</div>
+          <div class="blocks">5</div>
+          <div class="blocks">2</div>
+          <div class="blocks">0</div>
+        </div>
+        <div class="bears">
+          <div class="blocks">7</div>
+          <div class="blocks">4</div>
+          <div class="blocks">1</div>
+          <div class="blocks">.</div>
+        </div>
+        <div class="bears">
+          <div class="blocks">*</div>
+          <div class="blocks">+</div>
+          <div class="blocks">-</div>
+        </div>
+      </div>
+      <div class="absolute">
+        <div class="blocks" id="equal">=</div>
+      </div>
+    </div>
+  </body>
+  <script src="logic.js"></script>
+</html>

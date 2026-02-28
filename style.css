@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(42, 40, 40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  height: 450px;
+  width: 300px;
+  background-color: #37353e;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  margin: 5px;
+  font-family: "Orbitron", sans-serif;
+  user-select: none;
+  position: relative;
+}
+.inputs {
+  width: 100%;
+  background-color: #37353e;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+textarea {
+  width: 250px;
+  height: 70px;
+  border-radius: 20px;
+  border: none;
+  box-shadow:
+    rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background-color: #44444e;
+  text-align: right;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-family: "Orbitron", sans-serif;
+  resize: none;
+  overflow: hidden;
+  white-space: nowrap;
+  outline: none;
+  color: #ffedc7;
+  transition: all 0.6s ease-in-out;
+}
+
+textarea.active {
+  box-shadow:
+    rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  transform: scaleX(1.049);
+}
+.block {
+  width: 100%;
+  background-color: #37353e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  gap: 5px;
+}
+.blocks,
+.diff {
+  height: 70px;
+  width: 70px;
+  background-color: #44444e;
+  border-radius: 50%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #ffedc7;
+  transition: all 0.1s ease-in-out;
+}
+.blocks.active,
+.diff.active {
+  transform: scale(0.9);
+  box-shadow:
+    rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.diff {
+  background-color: #b03535;
+}
+.absolute {
+  position: absolute;
+  right: 14px;
+  bottom: 20px;
+}
+@media (max-width: 320px) {
+  .container {
+    height: 450px;
+    width: 300px;
+  }
+  textarea {
+    width: 225px;
+  }
+  .absolute {
+    position: absolute;
+    right: 1px;
+    bottom: 20px;
+  }
+}
+@media (min-width: 375px) {
+  .container {
+    width: 345px;
+  }
+  textarea {
+    width: 255px;
+  }
+  .absolute {
+    position: absolute;
+    right: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 369px;
+  }
+  .absolute {
+    position: absolute;
+    right: 15px;
+  }
+}
