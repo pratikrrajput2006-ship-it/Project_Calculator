@@ -1,41 +1,47 @@
-# 🧮 Project Calculator
+# Project Calculator
 
-A simple and stylish calculator built using HTML, CSS, and JavaScript.
+This project is a simple calculator application developed using HTML, CSS, and JavaScript. It performs basic arithmetic operations and demonstrates fundamental concepts of user interface design and client-side scripting.
 
-## 📌 Features
+## Features
 
-- Basic arithmetic operations (+, -, *, /)
-- Dynamic font resizing
-- Input validation
-- Clean and modern UI
-- Button animation effects
-- Backspace functionality
+* Supports basic arithmetic operations (addition, subtraction, multiplication, division)
+* Dynamic font resizing for better readability
+* Input validation to prevent invalid expressions
+* Clean and structured user interface
+* Button interaction effects
+* Backspace functionality
 
-## 🛠 Technologies Used
+## Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla JS)
+* HTML5
+* CSS3
+* JavaScript
 
-## 📂 Project Structure
+## Project Structure
 
+```id="calc02"
 Project_Calculator/
 │── index.html
 │── style.css
 │── logic.js
 │── README.md
+```
 
-## 🚀 How to Run
+## How to Run the Project
 
-1. Download or clone the repository
-2. Open `index.html` in your browser
+1. Clone or download this repository
+2. Open the `index.html` file in a web browser
 
-## 🎯 Future Improvements
+## Future Improvements
 
-- Add keyboard support
-- Add scientific calculator functions
-- Improve mobile responsiveness
+* Add keyboard input support
+* Implement scientific calculator functions
+* Enhance responsiveness for different screen sizes
 
----
+## Author
 
-Made with ❤️ by Pratik Rajput
+Pratik Rajput
+
+## License
+
+This project is open source and available for use.
