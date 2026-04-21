@@ -1,4 +1,4 @@
-const input = document.querySelector("#dataprint");
+ const input = document.querySelector("#dataprint");
 const blocks = document.querySelectorAll(".blocks");
 const equal = document.querySelector("#equal");
 const remove = document.querySelector("#crono");
