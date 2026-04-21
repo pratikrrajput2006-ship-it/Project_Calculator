@@ -1,25 +1,37 @@
-# Project Calculator
+# 🧮 Calculator Web App
 
-This project is a simple calculator application developed using HTML, CSS, and JavaScript. It performs basic arithmetic operations and demonstrates fundamental concepts of user interface design and client-side scripting.
+A clean and interactive calculator built with **HTML, CSS, and JavaScript**, focused on reliable functionality, smooth user interaction, and modern UI design.
 
-## Features
+---
 
-* Supports basic arithmetic operations (addition, subtraction, multiplication, division)
-* Dynamic font resizing for better readability
-* Input validation to prevent invalid expressions
-* Clean and structured user interface
-* Button interaction effects
+## 🔗 Overview
+
+This project demonstrates a browser-based calculator that performs basic arithmetic operations while maintaining strong input validation and a responsive interface.
+
+---
+
+## ✨ Features
+
+* Perform basic arithmetic operations: addition, subtraction, multiplication, division
+* Input validation to prevent invalid expressions (e.g., `++`, `//`)
+* Dynamic font resizing for long expressions
+* Smooth button animations and visual feedback
 * Backspace functionality
+* Responsive and modern UI design
 
-## Technologies Used
+---
 
-* HTML5
-* CSS3
-* JavaScript
+## 🛠️ Tech Stack
 
-## Project Structure
+* **HTML5** – Structure
+* **CSS3** – Styling and layout
+* **JavaScript (ES6)** – Logic and interactivity
 
-```id="calc02"
+---
+
+## 📁 Project Structure
+
+```id="proj-struct-final"
 Project_Calculator/
 │── index.html
 │── style.css
@@ -27,21 +39,32 @@ Project_Calculator/
 │── README.md
 ```
 
-## How to Run the Project
+---
 
-1. Clone or download this repository
-2. Open the `index.html` file in a web browser
+## ⚙️ Implementation Highlights
 
-## Future Improvements
+* Robust input handling to avoid invalid expressions
+* Prevention of UI freeze caused by uncontrolled loops
+* Clean separation of structure, styling, and logic
+* Lightweight and fast (no external libraries)
 
-* Add keyboard input support
-* Implement scientific calculator functions
-* Enhance responsiveness for different screen sizes
+---
 
-## Author
+## 🚀 Future Enhancements
 
-Pratik Rajput
+* Keyboard input support
+* Scientific calculator functions
+* Calculation history
+* Live deployment (GitHub Pages)
 
-## License
+---
 
-This project is open source and available for use.
+## 👤 Author
+
+**Pratik Rajput**
+
+---
+
+## 📄 License
+
+This project is open-source and available for educational and personal use.
