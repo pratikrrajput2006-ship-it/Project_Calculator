@@ -1,54 +1,88 @@
- const input = document.querySelector("#dataprint");
+const input = document.querySelector("#dataprint");
 const blocks = document.querySelectorAll(".blocks");
 const equal = document.querySelector("#equal");
 const remove = document.querySelector("#crono");
 
-// Number buttons
 blocks.forEach((element) => {
+  if (element.id === "equal") return;
+
   element.addEventListener("click", (e) => {
-    input.value += e.target.textContent;
-     element.classList.add("active");
-   setTimeout(() => {
-     element.classList.remove("active");
-   },100);
+    if (input.value === "Error" || input.value === "NaN" || input.value === "Infinity") {
+      input.value = "";
+    }
+
+    const char = e.target.textContent;
+    const currentVal = input.value;
+    const lastChar = currentVal.slice(-1);
+    const operators = ["+", "-", "*", "/", "."];
+
+    if (operators.includes(char)) {
+      if (operators.includes(lastChar)) {
+        input.value = currentVal.slice(0, -1) + char;
+      } else {
+        input.value += char;
+      }
+    } else {
+      input.value += char;
+    }
+
+    element.classList.add("active");
+    setTimeout(() => {
+      element.classList.remove("active");
+    }, 100);
+
     adjustFontSize();
   });
 });
 
-// Equal button
 equal.addEventListener("click", () => {
-  input.value = input.value.replace(/[^0-9+\-*/.]/g, "");
+  equal.classList.add("active");
+  setTimeout(() => {
+    equal.classList.remove("active");
+  }, 100);
+
   let data = input.value;
 
-  if (data === "") {
-    alert("Please enter a value");
-    return;
+  if (!data || data === "Error") return;
+
+  const operators = ["+", "-", "*", "/", "."];
+  while (data.length > 0 && operators.includes(data.slice(-1))) {
+    data = data.slice(0, -1);
   }
 
-  let pattern = /^[0-9+\-*/.]+$/;
+  data = data.replace(/[^0-9+\-*/.]/g, "");
 
-  if (!pattern.test(data)) {
-    alert("Invalid characters");
-    return;
-  }
+  data = data.replace(/(^|[-+*/])0+(?=\d)/g, '$1');
 
   try {
-    let result = eval(data);
-    input.value = result;
+    let result = new Function('return ' + data)();
+
+    if (result === Infinity || Number.isNaN(result)) {
+      input.value = "Error";
+    } else {
+      input.value = Math.round(result * 100000000) / 100000000;
+    }
+
     input.classList.add("active");
     adjustFontSize();
   } catch {
-    alert("Invalid Expression");
+    input.value = "Error";
+    adjustFontSize();
   }
 });
 
-// Backspace
 remove.addEventListener("click", () => {
-  input.value = input.value.slice(0, -1);
-   remove.classList.add("active");
-   setTimeout(() => {
+  remove.classList.add("active");
+  setTimeout(() => {
     remove.classList.remove("active");
-   },100);
+  }, 100);
+
+  if (input.value === "Error") {
+    input.value = "";
+  } else {
+    input.value = input.value.slice(0, -1);
+  }
+  
   adjustFontSize();
 
   if (input.value === "") {
@@ -56,12 +90,13 @@ remove.addEventListener("click", () => {
   }
 });
 
-// Dynamic font resize
 function adjustFontSize() {
   input.style.fontSize = "2rem";
 
-  while (input.scrollWidth > input.clientWidth) {
-    let size = parseFloat(getComputedStyle(input).fontSize);
-    input.style.fontSize = (size - 1) + "px";
+  let size = parseFloat(getComputedStyle(input).fontSize);
+  
+  while (input.scrollWidth > input.clientWidth && size > 10) {
+    size -= 1;
+    input.style.fontSize = size + "px";
   }
 }
